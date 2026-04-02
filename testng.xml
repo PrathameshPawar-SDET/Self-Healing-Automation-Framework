@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="TestingMint Bus Suite">
+
+    <test name="EndToEnd Tests">
+        <classes>
+            <class name="tests.EndToEndBookingTest"/>
+        </classes>
+    </test>
+
+</suite>

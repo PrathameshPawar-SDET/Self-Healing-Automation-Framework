@@ -1,0 +1,127 @@
+{
+  "source-input": [
+    "//input[@data-testid='source-input']",
+    "//input[@placeholder='Source']",
+    "//input[contains(@aria-label,'FROM input')]"
+  ],
+
+  "dest-input": [
+    "//input[@data-testid='dest-input']",
+    "//input[@placeholder='Dest']",
+    "//input[contains(@aria-label,'TO input')]"
+  ],
+
+  "date-input": [
+    "//input[@data-testid='date-input']",
+    "//input[@type='date']",
+    "//input[@aria-label='Select travel date']"
+  ],
+
+  "search_button": [
+    "//button[@data-testid='search-btn']",
+    "//button[normalize-space(text())='SEARCH']",
+    "//button[contains(@class,'bg-red-600') and contains(@class,'rounded-lg')]"
+  ],
+
+  "bus-card": [
+    "//div[contains(@data-testid,'bus-card-')]",
+    "//div[contains(@class,'shadow-sm') and contains(@class,'rounded-lg') and contains(@class,'border-gray-200')]"
+  ],
+
+  "bus-count": [
+    "//span[@data-testid='bus-count']",
+    "//*[@data-testid='bus-count']",
+    "//h2[@class]/span[1]"
+  ],
+
+  "first-bus-view-seat": [
+    "(//button[contains(@data-testid,'btn-view-seats-')])[1]",
+    "(//button[normalize-space(text())='View'])[1]",
+    "(//button[contains(@class,'bg-red-600') and contains(text(),'View')])[1]"
+  ],
+
+  "lazy-loader": [
+    "//div[@data-testid='lazy-loader']",
+    "//div[contains(@class,'animate-spin') and contains(@class,'border-red')]"
+  ],
+
+  "end-message": [
+    "//div[@data-testid='end-msg']",
+    "//div[contains(normalize-space(text()),'All buses loaded')]"
+  ],
+
+  "filter-ac": [
+    "//span[normalize-space(text())='ac']/preceding-sibling::input[@type='checkbox']",
+    "//label[.//span[text()='ac']]//input[@type='checkbox']"
+  ],
+
+  "filter-nonac": [
+    "//span[normalize-space(text())='nonac']/preceding-sibling::input[@type='checkbox']",
+    "//label[.//span[text()='nonac']]//input[@type='checkbox']"
+  ],
+
+  "seat-any": [
+    "(//div[contains(@data-testid,'seat-') and not(contains(@class,'bg-gray-300')) and contains(@class,'border')])[1]",
+    "(//div[contains(@data-testid,'seat-') and not(contains(@class,'cursor-not-allowed'))])[1]",
+    "(//div[contains(@data-testid,'seat-')])[1]"
+  ],
+
+  "seat-total-price": [
+    "//span[@data-testid='seat-total-price']",
+    "//span[contains(@data-testid,'seat-total')]",
+    "//div[contains(@class,'text-lg') and contains(@class,'font-bold')]//span[last()]"
+  ],
+
+  "btn-proceed-booking": [
+    "//button[@data-testid='btn-proceed-booking']",
+    "//button[normalize-space(text())='PROCEED']",
+    "//button[contains(@class,'bg-red-600') and contains(normalize-space(),'PROCEED')]"
+  ],
+
+  "passenger-name-0": [
+    "//input[@data-testid='passenger-name-0']",
+    "(//input[@placeholder='Name'])[1]"
+  ],
+
+  "passenger-age-0": [
+    "//input[@data-testid='passenger-age-0']",
+    "(//input[@placeholder='Age'])[1]"
+  ],
+
+  "passenger-gender-0": [
+    "//select[@data-testid='passenger-gender-0']",
+    "(//select)[1]"
+  ],
+
+  "btn-pay": [
+    "//button[@data-testid='btn-pay']",
+    "//button[normalize-space(text())='PAY NOW']",
+    "//button[contains(@class,'bg-red-600') and contains(normalize-space(),'PAY')]"
+  ],
+
+  "success-pnr": [
+    "//*[@data-testid='success-pnr']",
+    "//p[@data-testid='success-pnr']",
+    "//p[contains(@class,'font-mono') and contains(@class,'font-bold')]"
+  ],
+
+  "success-total": [
+    "//p[contains(@class,'text-green-600') and contains(@class,'font-bold')]",
+    "//div[contains(@class,'text-right')]//p[contains(@class,'text-green-600')]"
+  ],
+
+  "book-another-ticket": [
+    "//button[normalize-space(text())='Book Another Ticket']",
+    "//button[contains(normalize-space(),'Book Another')]"
+  ],
+
+  "booking-confirmed-heading": [
+    "//h1[normalize-space(text())='Booking Confirmed!']",
+    "//h1[contains(normalize-space(),'Confirmed')]"
+  ],
+
+  "modify-search": [
+    "//button[normalize-space(text())='Modify Search']",
+    "//button[contains(normalize-space(),'Modify')]"
+  ]
+}

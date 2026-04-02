@@ -1,0 +1,12 @@
+{
+  "search": {
+    "from": "Mumbai, MH",
+    "to": "Pune, MH",
+    "date": "2026-04-10"
+  },
+  "passenger": {
+    "name": "Test User",
+    "age": "25",
+    "gender": "M"
+  }
+}
