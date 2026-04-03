@@ -14,19 +14,16 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
 
-        // Read from config
+
         String browser = ConfigReader.getProperty("browser");
         String url = ConfigReader.getProperty("url");
 
-        // Initialize driver
         DriverManager.initDriver(browser);
 
         driver = DriverManager.getDriver();
 
-        // Open Application
         driver.get(url);
 
-        // Initialize Self-Healing Driver
         shDriver = new SelfHealingDriver(driver);
     }
 

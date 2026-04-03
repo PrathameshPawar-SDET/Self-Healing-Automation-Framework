@@ -34,7 +34,7 @@ public class SuccessPage {
                     By.cssSelector("[data-testid='success-pnr']")
             ));
         } catch (Exception e) {
-            System.out.println("[SelfHealing] Primary wait failed — retrying with XPath...");
+            System.out.println("[SelfHealing] Primary wait failed - retrying with XPath...");
             explicitWait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.xpath("//p[@data-testid='success-pnr']")
             ));
@@ -56,7 +56,7 @@ public class SuccessPage {
 
         if (pnr.isEmpty()) {
             throw new RuntimeException(
-                    "PNR text is empty — success screen may not have fully rendered."
+                    "PNR text is empty - success screen may not have fully rendered."
             );
         }
 
@@ -117,7 +117,6 @@ public class SuccessPage {
     public void clickBookAnotherTicket() {
         waitForSuccessScreen();
 
-        // SelfHealingDriver resolves "book-another-ticket" through all JSON fallbacks
         WebElement btn = wait.waitForElementClickable(
                 shDriver.findElement("book-another-ticket")
         );

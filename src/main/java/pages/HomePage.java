@@ -77,7 +77,7 @@ public class HomePage {
             alert.accept();
             throw new RuntimeException("Search failed due to missing inputs");
         } catch (NoAlertPresentException e) {
-            // No alert → search successful
+
         }
     }
 

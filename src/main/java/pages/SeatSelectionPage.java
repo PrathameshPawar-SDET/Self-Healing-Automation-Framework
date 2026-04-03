@@ -44,12 +44,12 @@ public class SeatSelectionPage {
         List<WebElement> allSeats = shDriver.findElements("seat-any");
 
         if (allSeats.isEmpty()) {
-            System.out.println("[SelfHealing] seat-any empty — direct CSS fallback.");
+            System.out.println("[SelfHealing] seat-any empty - direct CSS fallback.");
             allSeats = driver.findElements(By.cssSelector("[data-testid^='seat-']"));
         }
 
         if (allSeats.isEmpty()) {
-            throw new RuntimeException("No seats found — seat layout may not have rendered.");
+            throw new RuntimeException("No seats found - seat layout may not have rendered.");
         }
 
         WebElement targetSeat = null;
@@ -66,7 +66,7 @@ public class SeatSelectionPage {
 
         if (targetSeat == null) {
             throw new RuntimeException(
-                    "No available seat found — all visible seats may be booked."
+                    "No available seat found - all visible seats may be booked."
             );
         }
 
@@ -125,7 +125,7 @@ public class SeatSelectionPage {
             proceedBtn.click();
             System.out.println("Clicked PROCEED (direct click).");
         } catch (Exception e) {
-            System.out.println("Direct click failed on PROCEED — JS click.");
+            System.out.println("Direct click failed on PROCEED - JS click.");
             js.executeScript("arguments[0].click();", proceedBtn);
             System.out.println("Clicked PROCEED (JS click).");
         }

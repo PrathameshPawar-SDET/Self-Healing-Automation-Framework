@@ -24,7 +24,7 @@ public class SearchResultPage {
         this.wait = new WaitUtils(driver);
     }
 
-    // Waits for at least one bus card to be present in DOM
+
     private void waitForBusCards() {
         System.out.println("Waiting for bus cards...");
         WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(15));
@@ -34,7 +34,7 @@ public class SearchResultPage {
         System.out.println("Bus cards ready.");
     }
 
-    // Returns count of currently rendered bus cards
+
     public int getBusCount() {
         waitForBusCards();
         List<WebElement> cards = shDriver.findElements("bus-card");
@@ -73,21 +73,25 @@ public class SearchResultPage {
 
             js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-            try { Thread.sleep(1200); } catch (InterruptedException e) { e.printStackTrace(); }
+            try {
+                Thread.sleep(1200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             int currentCount = shDriver.findElements("bus-card").size();
-            System.out.println("Scroll #" + (i + 1) + " → Visible bus cards: " + currentCount);
+            System.out.println("Scroll #" + (i + 1) + " - Visible bus cards: " + currentCount);
 
             List<WebElement> endMsgs = shDriver.findElements("end-message");
             if (!endMsgs.isEmpty() && endMsgs.get(0).isDisplayed()) {
-                System.out.println("End message detected — all buses loaded.");
+                System.out.println("End message detected - all buses loaded.");
                 break;
             }
 
             if (currentCount == previousCount) {
                 noChangeCount++;
                 if (noChangeCount >= 3) {
-                    System.out.println("Count unchanged for 3 scrolls — stopping.");
+                    System.out.println("Count unchanged for 3 scrolls - stopping.");
                     break;
                 }
             } else {
@@ -108,20 +112,28 @@ public class SearchResultPage {
     public void clickFirstBus() {
         waitForBusCards();
 
-        try { Thread.sleep(500); } catch (InterruptedException e) { e.printStackTrace(); }
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         WebElement viewBtn = shDriver.findElement("first-bus-view-seat");
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView({block: 'center'});", viewBtn);
 
-        try { Thread.sleep(300); } catch (InterruptedException e) { e.printStackTrace(); }
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         try {
             viewBtn.click();
             System.out.println("Clicked View on first bus (direct click).");
         } catch (Exception e) {
-            System.out.println("Direct click failed — using JS click.");
+            System.out.println("Direct click failed - using JS click.");
             js.executeScript("arguments[0].click();", viewBtn);
             System.out.println("Clicked View on first bus (JS click).");
         }
@@ -151,7 +163,11 @@ public class SearchResultPage {
         WebElement btn = viewButtons.get(index);
         js.executeScript("arguments[0].scrollIntoView({block: 'center'});", btn);
 
-        try { Thread.sleep(300); } catch (InterruptedException e) { e.printStackTrace(); }
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         try {
             btn.click();
@@ -165,13 +181,21 @@ public class SearchResultPage {
     public void applyACFilter() {
         wait.waitForElementClickable(shDriver.findElement("filter-ac")).click();
         System.out.println("Applied AC filter.");
-        try { Thread.sleep(500); } catch (InterruptedException e) { e.printStackTrace(); }
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void applyNonACFilter() {
         wait.waitForElementClickable(shDriver.findElement("filter-nonac")).click();
         System.out.println("Applied Non-AC filter.");
-        try { Thread.sleep(500); } catch (InterruptedException e) { e.printStackTrace(); }
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean isLazyLoadingVisible() {

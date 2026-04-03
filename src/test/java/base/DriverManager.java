@@ -8,7 +8,6 @@ public class DriverManager {
 
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    // Initialize Driver
     public static void initDriver(String browser) {
 
         if (browser.equalsIgnoreCase("chrome")) {
@@ -19,12 +18,10 @@ public class DriverManager {
         getDriver().manage().window().maximize();
     }
 
-    // Get Driver
     public static WebDriver getDriver() {
         return driver.get();
     }
 
-    // Quit Driver
     public static void quitDriver() {
         if (driver.get() != null) {
             driver.get().quit();

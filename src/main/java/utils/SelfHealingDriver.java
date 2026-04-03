@@ -17,7 +17,6 @@ public class SelfHealingDriver {
     private WebDriver driver;
     private JSONObject locatorRepo;
 
-    // Short wait per locator attempt before trying next fallback
     private static final int FALLBACK_WAIT_SECONDS = 3;
 
     public SelfHealingDriver(WebDriver driver) {
