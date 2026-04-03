@@ -1,6 +1,6 @@
-# 🚀 Self-Healing Automation Framework (Selenium + Java + TestNG)
+# Self-Healing Automation Framework (Selenium + Java + TestNG)
 
-## 📌 Project Overview
+## Project Overview
 
 This project is a **robust end-to-end test automation framework** built using:
 
@@ -9,6 +9,7 @@ This project is a **robust end-to-end test automation framework** built using:
 * **TestNG**
 * **Maven**
 * **Self-Healing Locator Strategy**
+* **Extent Reports**
 
 It automates a **bus booking flow** (search → select → book → validate) and demonstrates advanced automation techniques used in real-world applications.
 
@@ -23,6 +24,7 @@ The goal of this project was to:
 * Handle **modern UI challenges (React-based applications)**
 * Simulate **real user interactions**
 * Create a **production-ready test architecture**
+* Generate **professional HTML reports with screenshots**
 
 ---
 
@@ -87,6 +89,9 @@ Implemented a **custom self-healing driver**:
 ```
 TestingMint_Bus_Automation
 │
+├── reports 
+│   ├── ExtentReport.html 
+│   ├── screenshots/
 ├── src
 │   ├── main
 │   │   ├── java
@@ -99,8 +104,11 @@ TestingMint_Bus_Automation
 │   │   │   │
 │   │   │   ├── utils
 │   │   │   │   ├── ConfigReader.java
+│   │   │   │   ├── ExtentManager.java
+│   │   │   │   ├── ExtentTestListner.java
 │   │   │   │   ├── JsonReader.java
 │   │   │   │   ├── RetryAnalyzer.java
+│   │   │   │   ├── ScreenshotUtil.java
 │   │   │   │   ├── SelfHealingDriver.java
 │   │   │   │   ├── WaitUtils.java
 │   │   │
@@ -126,14 +134,15 @@ TestingMint_Bus_Automation
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 | Tool               | Purpose                       |
-| ------------------ | ----------------------------- |
+| ------------------ |-------------------------------|
 | Selenium WebDriver | Browser automation            |
 | TestNG             | Test execution & assertions   |
 | Maven              | Build & dependency management |
 | JSON               | Data & locator management     |
+| Extent Reports     | Extent Reports                |
 | WebDriverManager   | Driver setup                  |
 
 ---
@@ -162,6 +171,17 @@ TestingMint_Bus_Automation
 
 * Explicit waits
 * React synchronization
+
+### Extent Report Integration
+
+* HTML Report Generation
+* Pass/Fail logs
+* Stracktrace Capture
+
+### Screenshot on Failure
+
+* Automatic Capture
+* Attached in Report
 
 ### End-to-End Flow Covered
 
@@ -206,10 +226,17 @@ Booking flow completed successfully!
 
 ---
 
+## Report Output
+
+After execution:
+
+* `reports/ExtentReport.html`
+* `reports/screenshots/`
+
+---
+
 ## Future Enhancements
 
-* Extent Reports integration
-* Screenshot on failure
 * Parallel execution
 * AI-based healing (Healenium)
 * Cross-browser testing
